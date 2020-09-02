@@ -266,10 +266,10 @@ window.view = {
 		this.drawCircle(275, 75, '#000000');
 		this.drawCircle(75, 325, '#000000');
 		this.drawCircle(275, 325, '#000000');
-		this.displayText('(x1, y1)', 65, 65); 
-		this.displayText('(x2, y2)', 265, 65);
-		this.displayText('(x3, y3)', 265, 345);
-		this.displayText('(x4, y4)', 75, 345);
+		this.displayText('(x1, y1)', 50, 50); 
+		this.displayText('(x2, y2)', 250, 50);
+		this.displayText('(x3, y3)', 250, 300);
+		this.displayText('(x4, y4)', 50, 300);
 		this.canvasContext.save();
     	},
 	/* validationInput: check validation of input that is given by user and if input value is valid 
@@ -355,7 +355,7 @@ window.view = {
 			if (this.nextSiblingElement.id === 'codeContentIfElse4Id' || this.nextOfnextSiblingElement.id === 'codeContentIfElse6Id') {
 				if (this.nextSiblingElement.id === 'codeContentIfElse4Id') 
 					this.codeExecutionWithColour();
-				else if (model.valueOfX >= 75) 
+				else if (model.valueOfX >= 050) 
 					this.changeFlagValue('flagValue1', 'codeContentIfElse6Id', '1');
 				else
 					this.codeExecutionWithColourAndId('codeContentIfElse8Id');

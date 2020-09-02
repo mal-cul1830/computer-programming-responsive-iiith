@@ -240,7 +240,7 @@ window.view = {
 				this.setInnerHtml('outputDayId', 'INVALID INPUT');
 	 		}
 	 	}
-	 	if (model.inputNumber === 7) {
+	 	else if (model.inputNumber >=6) {
 	 		if (this.nextSiblingElement.id === 'holidayId') {
 				this.codeExecutionWithColour();
 				this.changeOpacity('holidayImage');

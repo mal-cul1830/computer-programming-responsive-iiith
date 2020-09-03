@@ -48,7 +48,8 @@ window.view = {
 		return inputValue
 	},
 	activateEvents: function() {
-		this.addClickEvent('btnOk', function() { view.proceedToStartButton() })
+		this.addClickEvent('btnOk', function() { view.proceedToStartButton()})
+		this.addClickEvent('btnRandom', function() { document.getElementById("userInput").disabled = true; })
 		this.addClickEvent('btnStart', function() { view.displayElements() })
 		this.addClickEvent('btnNext', function() { view.sortArray() })
 	},
@@ -81,10 +82,13 @@ window.view = {
 		inputValue = inputValue.replace(/\s/g, ',')
 		this.numbers = inputValue.split(',')
 	},
+	disableInput: function() {
+	},
 	takeInputFromRadioBox: function() {
 		var element = document.getElementsByName('radio_group')
-		if ( element[0].checked )
-			this.generateRandomNumbers()
+		if ( element[0].checked ){
+			this.generateRandomNumbers();
+		}
 		else if (element[1].checked)
 			this.getUserInput()
 	},

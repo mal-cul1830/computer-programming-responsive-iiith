@@ -168,6 +168,7 @@ window.view = {
 				this.enableButton('btnNext')
 				this.changeClass( 'btnNext', 'button nextButton' )
 				this.changeClass( 'line1' , 'showDivInRed')
+				this.showImage()
 			} 
 		}
 		else
@@ -191,6 +192,7 @@ window.view = {
 	showElementAsSorted: function() {
 		var elements = document.getElementById('sortingDiv').childNodes
 		elements[this.i - 1].firstChild.style.background = '#41B247'
+		this.removeImage()
 	},
 	updateArray: function() {
 		var elements = document.getElementById('sortingDiv').childNodes
@@ -227,8 +229,9 @@ window.view = {
 			this.key = this.numbers[this.i]
 		}
 		else if ( this.lastRedDiv.id === 'line8' ) {
-			if ( this.j >= 0 && this.numbers[this.j] > this.key )
+			if ( this.j >= 0 && this.numbers[this.j] > this.key ){
 				this.highlightNextStep()
+			}
 			else {
 				this.nextRedDiv = this.jumpTo('line13')
 				this.highlightNextStep()
@@ -240,14 +243,12 @@ window.view = {
 			this.highlightNextStep()
 		}
 		else if ( this.lastRedDiv.id === 'line12' ) {
-			this.removeImage()
 			this.nextRedDiv = this.jumpTo('line8')
 			this.highlightNextStep()
 			this.j --
 		}
 		else if ( this.lastRedDiv.id === 'line13' ) {
 			this.insertKey()
-			this.removeImage()
 			this.highlightNextStep()
 		}
 		else if ( this.lastRedDiv.id === 'line14' ) {

@@ -122,6 +122,23 @@ window.view = {
         image.className = 'arrowImage'
 		document.getElementById('sortingDiv').appendChild(image)
 	},
+	removeKeyImage: function() {
+		var element = document.getElementById('sortingDiv').childNodes
+		document.getElementById('key').innerHTML = element[this.i].firstChild.innerHTML
+		var elements = document.getElementById('sortingDiv').childNodes
+		elements[this.i].firstChild.style.background = '#F5B941'
+		var element = document.getElementsByTagName('img')
+		document.getElementById('sortingDiv').removeChild(element[this.key])
+	},
+	createKeyImage: function(left, top) {
+		var image = document.createElement('img')
+		image.style.position = 'absolute'
+		image.style.left = left + 'px'
+		image.style.top = top  + 'px'
+		image.style.opacity = '0.7'
+        image.className = 'arrowImage'
+		document.getElementById('sortingDiv').appendChild(image)
+	},
 	showCode: function() {
 		document.getElementById('1-dArray').className = 'show, codeLayout'
 	},
@@ -179,6 +196,7 @@ window.view = {
 		document.getElementById('key').innerHTML = element[this.i].firstChild.innerHTML
 		var elements = document.getElementById('sortingDiv').childNodes
 		elements[this.i].firstChild.style.background = '#F5B941'
+		this.showKeyImage()
 	},
 	swapText: function() {
 		var elements = document.getElementById('sortingDiv').childNodes

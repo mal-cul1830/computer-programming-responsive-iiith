@@ -167,18 +167,28 @@ window.view = {
     	this.clearDivs()
     	var selected_loop = this.getSelectedLoop()
 		var inputValue = document.getElementById('simpleLoopInput').value
-		if (selected_loop === 'for' && inputValue !== '' && !isNaN(model.inp) )
-		{
-			this.displayLoop('forLoopContent', 'codeContentFor1')
+		if(inputValue!=='' && !isNaN(model.inp)){
+			if(!(parseInt(inputValue)>=0 && parseInt(inputValue)<=20)){
+				alert('Enter input within range 0-20');
+				return false;
+			}
+			else{
+				if (selected_loop === 'for')
+					{
+						this.displayLoop('forLoopContent', 'codeContentFor1')
+					}
+				if (selected_loop === 'while')
+					{
+						this.displayLoop('whileLoopContent', 'codeContentWhile1')
+					}
+				if (selected_loop === 'do-while')
+					{
+						this.displayLoop('dowhileLoopContent', 'codeContentDoWhile1')
+					}
+			}
+			
 		}
-		if (selected_loop === 'while' && inputValue !== '' && !isNaN(model.inp))
-		{
-			this.displayLoop('whileLoopContent', 'codeContentWhile1')
-		}
-		if (selected_loop === 'do-while' && inputValue !== '' && !isNaN(model.inp))
-		{
-		 	this.displayLoop('dowhileLoopContent', 'codeContentDoWhile1')
-		}
+		
 		this.disableButton('btnStart')
 		this.changeClass( 'btnStart', 'buttonDisable startButton')
 		this.enableButton('btnNext')
